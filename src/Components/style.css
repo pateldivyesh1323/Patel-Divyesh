@@ -1,0 +1,305 @@
+:root {
+    --background: #005;
+    --primary: #88D5BF;
+    --secondary: #5D6BF8;
+    --third: #e27fcb;
+}
+
+/* Navbar */
+.Navbar {
+    color: rgb(212, 212, 212);
+    font-family: 'Poppins', sans-serif;
+    position: fixed;
+    width: 100vw;
+    top: 0px;
+    left: 0px;
+    z-index: 10;
+}
+
+.navList {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 70px;
+    align-items: center;
+    height: 70px;
+}
+
+.navLinksWrapper {
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navLinks {
+    margin: 0px 10px;
+    font-size: 17px;
+    cursor: pointer;
+    transition: all;
+    transition-duration: 400ms;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.navLinks:hover {
+    letter-spacing: 3px;
+    color: white;
+    text-shadow: 0.5px 0.5px 1px white,-0.5px 0.5px 1px white,-0.5px -0.5px 1px white,0.5px -0.5px 1px white;
+}
+
+.navLinks::after,
+.navLinks::before {
+    backface-visibility: hidden;
+    bottom: 0px;
+    content: " ";
+    display: block;
+    margin: 5px auto;
+    position: relative;
+    transition-property: all;
+    transition-duration: 700ms;
+    width: 70%;
+}
+
+.navLinks:hover::after,
+.navLinks:hover::before {
+    backface-visibility: hidden;
+    border: 1px solid #ffffff;
+    width: 100%;
+}
+
+.navLinks:visited {
+    color: rgb(212, 212, 212);
+}
+
+/* Home */
+.Home {
+    height: 100vh;
+    background: url('../Images/background.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+}
+
+.homeContent {
+    color: rgb(212, 212, 212);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: left;
+}
+
+.homeBoxWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    animation-name: homeTextAnimation;
+    animation-duration: 1s;
+    position: relative;
+}
+
+@keyframes homeTextAnimation {
+    0% {
+        opacity: 0;
+        top: 10px;
+    }
+
+    100% {
+        opacity: 1;
+        top: 0px;
+    }
+}
+
+.homeBox {
+    width: 70%;
+}
+
+.homeImage {
+    width: 40%;
+    animation-name: homeTextAnimation;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+
+.homeHello {
+    font-size: 24px;
+}
+
+.homeDesc {
+    font-size: 24px;
+    width: 85%;
+}
+
+.homeName {
+    font-size: 90px;
+    font-weight: 500;
+    text-decoration: underline;
+    color: rgb(83, 67, 218);
+    font-family: 'Poppins', sans-serif;
+    text-shadow: 2px 2px 7px rgb(34, 34, 34);
+}
+
+/* My Image */
+.myImage {
+    height: 370px;
+    width: 370px;
+    background: linear-gradient(45deg, var(--primary) 0%, var(--secondary) 50%, var(--third) 100%);
+    animation: morph 8s ease-in-out infinite;
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    transition: all 1s ease-in-out;
+    z-index: 5;
+
+}
+
+
+@keyframes morph {
+    0% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+
+    50% {
+        border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    }
+
+    100% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+}
+
+
+
+/* Home Lines */
+.homeLine {
+    width: 35%;
+    height: 0px;
+    background-color: white;
+    border: 1px solid white;
+}
+
+.homeSocial {
+    position: absolute;
+    bottom: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2%;
+}
+
+.homeSocialIcons {
+    height: 30px;
+    transition: bottom;
+}
+
+.homeSocialIcons:hover {
+    transform: translateY(-5px);
+}
+
+/* Skills */
+.Skills {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    height: 100vh;
+    background: url('../Images/About.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-attachment: fixed; */
+    padding-top: 70px;
+    box-sizing: border-box;
+    color: rgb(212, 212, 212);
+}
+
+.skillsTitle {
+    text-align: center;
+    font-size: 35px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.skillsContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 15px;
+    width: 100%;
+}
+
+.skillsCard {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.skillsCardItem {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    height: 500px;
+    gap: 15px;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.07);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    width: 80%;
+}
+
+.skillsCardItemTitle {
+    font-size: 25px;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: underline;
+    color: rgb(83, 67, 218);
+}
+
+.skillsImage {
+    height: 70px;
+    width: 70px;
+}
+
+.toolsImg {
+    height: 100px;
+    width: 100px;
+}
+
+
+
+/* Reveal */
+.reveal{
+    position: relative;
+    transform: translateY(80px);
+    opacity: 0;
+    transition: all 1.5s ease;
+}
+
+.reveal.active{
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+
+/* Projects */
+.Projects{
+    min-height: 100vh;
+    background-image: url('../Images/Projects.svg');
+    background-size: cover;
+    /* background-attachment: fixed; */
+    padding-top: 70px;
+    box-sizing: border-box;
+}

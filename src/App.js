@@ -1,23 +1,35 @@
-import logo from './logo.svg';
 import './App.css';
+import Skills from './Components/Skills';
+import Home from './Components/Home';
+import Navbar from './Components/Navbar';
+import Projects from './Components/Projects';
 
 function App() {
+
+  const reveal =()=>{
+    var reveals = document.querySelectorAll('.reveal');
+
+    for(let i=0;i<reveals.length;i++)
+    {
+      var windowHeight = window.innerHeight;
+      var revealTop = reveals[i].getBoundingClientRect().top;
+      var revealPoint = 70;
+      if(revealTop<windowHeight - revealPoint){
+        reveals[i].classList.add('active');
+      }
+      else
+      {
+        reveals[i].classList.remove('active');
+      }
+    }
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar reveal={reveal}/>
+      <Home reveal={reveal}/>
+      <Skills reveal={reveal}/>
+      <Projects />
     </div>
   );
 }
